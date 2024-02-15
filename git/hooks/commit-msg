@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const process = require('process');
+
+const messageFile = process.argv[2];
+const message = fs.readFileSync(messageFile, { encoding: 'utf8' });
+
+const regex = /\[ref: (\d+)\]/;
+
+if (!regex.test(message)) {
+  console.log("[POLICY] Your message is not formatted correctly");
+  process.exit(1);
+}
