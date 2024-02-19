@@ -5,9 +5,10 @@ function getLength(value) {
     if (value instanceof Map || value instanceof Set) {
         return console.log(value.size);
     }
-    if (typeof value === 'number' && !isNaN(value)) {
-        return console.log(value.toString().length);
-    } else if (value !== null && value !== undefined && typeof value.length === 'number') {
+    else if (value === Infinity || value === -Infinity) {
+        return console.log(0);
+    }
+    else if (value !== null && value !== undefined && typeof value.length === 'number') {
         return console.log(value.length);
     } else {
         return console.log(0);
