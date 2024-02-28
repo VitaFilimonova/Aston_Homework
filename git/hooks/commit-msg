@@ -6,9 +6,11 @@ const process = require('process');
 const messageFile = process.argv[2];
 const message = fs.readFileSync(messageFile, { encoding: 'utf8' });
 
-const regex = /\[ref: (\d+)\]/;
+const regex = /^ASTONJS-([^0]\d*) (\[feat\]|\[fix\]|\[chore\]):/;
 
 if (!regex.test(message)) {
   console.log("[POLICY] Your message is not formatted correctly");
   process.exit(1);
 }
+
+process.exit(0);
