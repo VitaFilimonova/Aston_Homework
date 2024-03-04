@@ -105,7 +105,7 @@ function writeIndex (arr) {
     arr.forEach((el,index)=> {
       setTimeout(()=> {
           console.log(index)
-      }, index * 3000)
+      }, (index+1) * 3000)
     })
 }
 
